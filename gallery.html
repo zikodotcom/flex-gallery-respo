@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+        <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            body{
+                background-color: blanchedalmond;
+            }
+            .panels{
+                display: flex;
+                min-width: 100%;
+                min-height: 100vh;
+            }
+            .panel1 {
+            background-image: url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
+        }
+
+        .panel2 {
+            background-image: url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500);
+        }
+
+        .panel3 {
+            background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
+        }
+
+        .panel4 {
+            background-image: url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);
+        }
+
+        .panel5 {
+            background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+        }
+        .panels>*{
+            flex: 1;
+        }
+        .panels .PANEL{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.5s;
+            /* flex: 1 0 auto; */
+        }
+        .panels .PANEL .top{
+            transform: translateY(-1000%);
+        }
+        .panels .PANEL .bottom{
+            transform: translateY(1000%);
+        }
+        .panels .PANEL p{
+            text-transform: uppercase;
+            font-family: 'Amatic SC', cursive;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+            font-size: 3em;
+            transition: transform 0.5s;
+        }
+        .panels .PANEL .tran{
+            transform: translateY(0%);
+        }
+        .panels .flx{
+            flex: 2;
+        }
+        </style>
+</head>
+<body>
+    <div class="panels">
+        <div class="panel1 PANEL">
+            <p class="top">HEY</p>
+            <p class="middle">LET'S</p>
+            <p class="bottom">DANCE</p>
+        </div>
+        <div class="panel2 PANEL">
+            <p class="top">GIVE</p>
+            <p class="middle">TAKE</p>
+            <p class="bottom">RECEIVE</p>
+        </div>
+        <div class="panel3 PANEL">
+            <p class="top">LOVE</p>
+            <p class="middle">YOU</p>
+            <p class="bottom">NORA🤍</p>
+        </div>
+        <div class="panel4 PANEL">
+            <p class="top">GIVE</p>
+            <p class="middle">ALL</p>
+            <p class="bottom">YOUCAN</p>
+        </div>
+        <div class="panel5 PANEL" >
+            <p class="top">LIFE</p>
+            <p class="middle">IN</p>
+            <p class="bottom">MOTION</p>
+        </div>
+    </div>
+    <script>
+        let panel = document.querySelectorAll('.panels .PANEL')
+        panel.forEach((el)=>{
+            el.addEventListener('click', function(){
+                this.classList.toggle('flx')
+                let top = this.querySelector('.top')
+                let bottom = this.querySelector('.bottom')
+                top.classList.toggle('tran')
+                bottom.classList.toggle('tran')
+            })
+        })
+    </script>
+</body>
+</html>
